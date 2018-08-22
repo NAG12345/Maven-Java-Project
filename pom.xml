@@ -108,6 +108,16 @@
                 <sonar.host.url>http://localhost:9000/</sonar.host.url>
      <sonar-maven-plugin.version>3.3.0.603</sonar-maven-plugin.version>
             </properties>
+		 <repository>
+            <id>deployment</id>
+            <name>Internal Releases</name>
+            <url>http://localhost:8081/repository/Sample-REL/</url>
+        </repository>
+        <snapshotRepository>
+            <id>deployment</id>
+            <name>Internal Snapshot Releases</name>
+            <url>http://localhost:8081/repository/Sample-SNAP/</url>
+        </snapshotRepository>
             <build>
               <plugins>
                 <plugin>
