@@ -1,0 +1,23 @@
+node
+{
+    stage('Scm Chekout'){
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'dba90974-f045-4cd0-a9bb-6264da5eafd1', url: 'https://github.com/devopstrainingblr/Maven-Java-Project.git']]])
+            def workspace =pwd()
+    }
+    stage('Static Code Analysis'){
+        echo ("Static code Analysis")
+    }
+    stage('Code Compile'){
+        echo ("Code Compile")
+    }
+    stage('Code Unit Test'){
+        echo ("Code Unit Test")
+    }
+    stage('Code Package'){
+        echo ("Code Package")
+    }
+    stage('Code Deploy'){
+        echo("Code Deploy")
+    }
+
+}
