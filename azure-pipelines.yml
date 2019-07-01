@@ -7,13 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows'
-
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
+  vmImage: 'ubuntu-latest'
 - task: DownloadPackage@1
   inputs:
     packageType: 'maven'
@@ -21,6 +15,12 @@ steps:
     view: '72d83939-07f5-4e8b-b179-31deb26d5d3e'
     definition: 
     downloadPath: '$(System.ArtifactsDirectory)'
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
