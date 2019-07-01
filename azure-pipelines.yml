@@ -14,13 +14,13 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-- task: Ant@1
+- task: DownloadPackage@1
   inputs:
-    buildFile: 'build.xml'
-    options: 
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
+    packageType: 'maven'
+    feed: '/f098b71c-4f64-4e4d-be2c-39158d12f9a7'
+    view: '72d83939-07f5-4e8b-b179-31deb26d5d3e'
+    definition: 
+    downloadPath: '$(System.ArtifactsDirectory)'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
