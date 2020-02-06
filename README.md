@@ -1,2 +1,2 @@
 # Maven-Java-Project
-I name is nagendra
+This is new project
